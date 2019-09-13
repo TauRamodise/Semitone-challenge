@@ -11,22 +11,23 @@ describe('class JamBuddy()', () => {
 
 });
 
-fdescribe('class JamBuddy() methods ', () => {
-    let jamBuddy;
-   beforeEach(() => {
-      jamBuddy = new JamBuddy();
+describe('class JamBuddy() methods ', () => {
+    let jamBuddy
+    beforeEach(() => {
+      jamBuddy = new JamBuddy(['A', 'B', 'C', 'D', 'E', 'F', 'G']);
    })
    it('selectNotes() should be defined', () => {
        expect(JamBuddy).toBeDefined();
-   });
-   it('should be defined', () => {
-       let notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-    expect(notes.selectNotes()).not.toBe(['A', 'B', 'C', 'D', 'E', 'F', 'G']);
+   })
+   
+   it('should be defined', () => {  
+
+    expect(jamBuddy.selectNotes()).not.toBe(['A', 'B', 'C', 'D', 'E', 'F', 'G']);
 });
 });
 
 describe('class JamBuddy() methods ', () => {
-    let jamBuddy;
+   let jamBuddy;
    beforeEach(() => {
       jamBuddy = new JamBuddy();
    })
@@ -35,5 +36,6 @@ describe('class JamBuddy() methods ', () => {
    });
    it('.... should be defined', () => {
     expect(JamBuddy).toBeDefined();
+
 });
 });

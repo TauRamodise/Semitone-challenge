@@ -1,5 +1,4 @@
-// module.exports = 
-class JamBuddy {
+ module.exports = class JamBuddy {
     constructor(notes, result) {
         this.notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
         this.result = result;
@@ -19,8 +18,4 @@ class JamBuddy {
     }
 };
 
-let jam = new JamBuddy()
-
-console.log(jam.selectNotes());
-console.log(jam.checkAnswer());
 
