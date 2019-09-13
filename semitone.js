@@ -11,9 +11,9 @@
         return this.result.sort();
     }
 
-    checkAnswer() {
+    checkAnswer(firstIndex) {
 
-        let firstIndex = Math.abs(this.notes.indexOf(this.result[1]) - this.notes.indexOf(this.result[0]));
+         firstIndex = Math.abs(this.notes.indexOf(this.result[1]) - this.notes.indexOf(this.result[0]));
         return `the distance between the results ${this.result} is ` +  firstIndex;
     }
 };
