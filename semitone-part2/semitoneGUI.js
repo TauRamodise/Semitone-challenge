@@ -1,6 +1,6 @@
 class JamBuddy {
     constructor(notes, result, rightAnswer) {
-        this.notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+        this.notes = ['A', ['A#','Bb'], 'B', 'C', ['C#','Db'], 'D', ['D#','Eb'], 'E', 'F', ['F#','Gb'], 'G', ['G#', 'Ab']];
         this.result = result;
         this.rightAnswer = rightAnswer;
     }
