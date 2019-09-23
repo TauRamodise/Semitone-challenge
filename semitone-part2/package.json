@@ -1,0 +1,15 @@
+{
+  "name": "semitone-part2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "semitoneGUI.js",
+  "scripts": {
+    "test": "jasmine semitoneGUI.spec.js"
+  },
+  "author": "Dimpho",
+  "license": "ISC",
+  "dependencies": {
+    "jasmine": "^3.4.0",
+    "jsdom": "^15.1.1"
+  }
+}
