@@ -14,7 +14,7 @@ describe('class JamBuddy()', () => {
 describe('class JamBuddy() methods ', () => {
     let jamBuddy
     beforeEach(() => {
-        jamBuddy = new JamBuddy(['A', 'B', 'C', 'D', 'E', 'F', 'G']);
+        jamBuddy = new JamBuddy();
     })
     it('selectNotes() should be defined', () => {
         expect(JamBuddy).toBeDefined();
@@ -37,7 +37,6 @@ describe('class JamBuddy() methods ', () => {
         expect(JamBuddy).toBeDefined();
     });
     it(' should be defined', () => {
-        expect(jamBuddy.selectNotes()).toEqual(arr);
         expect(jamBuddy.checkAnswer(arr)).toEqual(jasmine.any(String));
 
     });
