@@ -37,6 +37,8 @@ class JamBuddy {
     return window.document.getElementById('notes').innerHTML = this.selectedSemitoneNotes.sort();
   }
 
+  
+
   checkAnswer() {
     let score = 0;
 
