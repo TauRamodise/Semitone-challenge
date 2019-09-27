@@ -40,16 +40,16 @@ class JamBuddy {
   checkAnswer() {
     let score = 0;
 
-    this.inputNumber = Number(window.document.getElementById('value').value);
+    this.inputNumber = Number(/* window.document.getElementById('value').value */);
 
     this.rightAnswer = Math.abs(this.notes.indexOf(this.selectedSemitoneNotes[1]) - this.notes.indexOf(this.selectedSemitoneNotes[0]));
 
 
     if (this.inputNumber === this.rightAnswer) {
       document.getElementById('score').innerHTML = score + 1
-      return window.document.getElementById('answer').innerHTML = `Super! You got it right`;
+      return/*  window.document.getElementById('answer').innerHTML = */ `Super! You got it right`;
     } else {
-      return window.document.getElementById('answer').innerHTML = `Sorry! The answer is ${this.rightAnswer}. Try again`;
+      return /* window.document.getElementById('answer').innerHTML = */ `Sorry! The answer is ${this.rightAnswer}. Try again`;
     }
 
 
@@ -66,6 +66,13 @@ class JamBuddy {
 
   }
 }
+
+displaySemitoneArray = () => {
+  let semitoneArray = this.notes;
+  console.log(semitoneArray);
+  
+} 
+displaySemitoneArray()
 
 let verify = new JamBuddy()
 verify.selectNotes()
