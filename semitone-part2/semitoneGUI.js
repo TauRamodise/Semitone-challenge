@@ -17,7 +17,11 @@ class JamBuddy {
     this.rightAnswer = rightAnswer;
     this.inputNumber = inputNumber;
   }
+
+  
+
   // selectNotes randomizes the array and returns two new letters in the array
+  
   selectNotes() {
     let array = [...this.notes];
 
@@ -65,11 +69,25 @@ class JamBuddy {
     }
 
   }
-}
+
+
+  
+  
+
+    hide(){
+    let x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}   
 
 let verify = new JamBuddy()
 verify.selectNotes()
 verify.checkAnswer()
-
+verify.revealAnswer();
+verify.hide();
 
 module.exports = verify;
