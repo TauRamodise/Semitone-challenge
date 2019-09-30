@@ -20,6 +20,10 @@ body{
     text-align: center;
 }
 
+p{
+    color: black;
+}
+
 
 h1{
     width: 100%;
@@ -35,9 +39,7 @@ h1{
 .wrapper{
     text-align: center;
 }
-.button{
-    position: absolute;
-}
+
 
 h4{
     color: black;
