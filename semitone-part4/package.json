@@ -4,14 +4,14 @@
   "description": "",
   "main": "semitoneGUI.js",
   "scripts": {
-    "test": "jasmine semitoneGUI.spec.js"
+    "test": "jasmine semitoneGUI4.spec.js"
   },
   "author": "Dimpho",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "fontawesome": "^5.6.3",
-    "jasmine": "^3.4.0",
+    "jasmine": "^3.5.0",
     "jsdom": "^15.1.1"
   }
 }

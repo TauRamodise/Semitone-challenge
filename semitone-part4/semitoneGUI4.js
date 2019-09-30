@@ -19,90 +19,104 @@ class JamBuddy {
     this.streak = 0
   }
 
-  
+
 
   // selectNotes randomizes the array and returns two new letters in the array
-  
+
   selectNotes() {
     let array = [...this.notes];
 
     // shuffle the array
     let shuffledArray = array.sort(() => Math.random() - 0.5)
+    console.log(shuffledArray);
+
 
     // reduce the array two only 2 elements
     let newArray = shuffledArray.slice(0, 2)
+    console.log(newArray);
+    
 
     /*  convert the array of elements to individual strings in a new array (takes the sharps and flats 
      out of the second array) */
     let selectedNotes = newArray.toString().split(',')
+    console.log(selectedNotes);
+    
 
     // randomize new array with either two or three elements 
     this.selectedSemitoneNotes = selectedNotes.sort(() => Math.random() - 0.5).slice(0, 2)
+    console.log(this.selectedSemitoneNotes);
     
-    return window.document.getElementById('notes').innerHTML = this.selectedSemitoneNotes.sort();
+
+    return window.document.getElementById('notes').innerHTML = this.selectedSemitoneNotes.sort()
   }
 
   checkAnswer() {
 
-    // let score = 0;
-
-    this.inputNumber = Number(window.document.getElementById('value')); 
+    this.inputNumber = parseInt(window.document.getElementById('value').value);
     let noteOne = this.selectedSemitoneNotes[1]
-    let noteTwo = this.selectedSemitoneNotes[0]
+    let noteTwo = this.selectedSemitoneNotes[0];
 
-    // if(noteOne > noteTwo){
-    //   this.rightAnswer = Math.abs(this.notes.indexOf(noteOne) - this.notes.indexOf(noteTwo));
-    //   return this.rightAnswer
-    // } 
-    // if(noteTwo > noteOne){
-    //   this.rightAnswer = Math.abs(this.notes.indexOf(noteTwo) - this.notes.indexOf(noteOne));
-    //   return this.rightAnswer
-    // }
-
-     this.rightAnswer = Math.abs(this.notes.indexOf(noteOne) - this.notes.indexOf(noteTwo));
+    this.rightAnswer = Math.abs(this.notes.indexOf(noteOne) - this.notes.indexOf(noteTwo));
     console.log(this.rightAnswer);
-    
 
-    if (this.inputNumber === this.rightAnswer) {
-      this.streak++
-      return window.document.getElementById('answer').innerHTML = `Super! You got it right Streak: ${this.streak}
-      `;
+
+    if (this.inputNumber == this.rightAnswer) {
+      return window.document.getElementById('answer').innerHTML = `Super! You got it right!`;
     } else {
-      this.streak = 0
-      return  window.document.getElementById('answer').innerHTML =  `Sorry! The answer is ${this.rightAnswer}. Try again`;
+      return window.document.getElementById('answer').textContent = `Sorry! The answer is ${this.rightAnswer}. Try again`;
     }
   }
 
 
-  revealAnswer() {
-    let showNotes  = document.getElementById('explanation'); 
+  revealExplanation() {
+    let showNotes = window.document.getElementById('explanation');
     this.semitoneNoteOne = this.selectedSemitoneNotes[0];
     this.semitoneNoteTwo = this.selectedSemitoneNotes[1];
 
     console.log(this.semitoneNoteOne);
     console.log(this.semitoneNoteTwo);
 
-     showNotes.textContent = `${this.notes}
-                          
-                          The distance between the ${this.semitoneNoteOne} and ${this.semitoneNoteTwo} is ${this.rightAnswer}`
-
-    
-    for( let n = 0; n < this.selectedSemitoneNotes.length; n++ ){
-      if(this.selectedSemitoneNotes[n][0] == this.semitoneNoteOne || this.selectedSemitoneNotes[n][1] == this.semitoneNoteOne ){
-        this.selectedSemitoneNotes[n].style.fontcolor('#27ae60');
+    let array = [...buddy.notes].toString().split(',');
+    for (let n = 0; n < array.length; n++) {
+      if (array[n] == this.semitoneNoteOne) {
+        array[n] = array[n]
+          .toString()
+          .fontcolor('#27ae60')
+          .fontsize(5)
       }
-      if(this.selectedSemitoneNotes[n][0] == this.semitoneNoteTwo || this.selectedSemitoneNotes[n][1] == this.semitoneNoteTwo ){
-        this.selectedSemitoneNotes[n].style.fontcolor('#27ae60');
+      if (array[n] == this.semitoneNoteTwo) {
+        array[n] = array[n]
+          .toString()
+          .fontcolor('#27ae60')
+          .fontsize(5)
       }
     }
-  }
-  
 
-}   
+    return showNotes.innerHTML = `${array}
+                    
+                         </br ></br > The distance between the ${this.semitoneNoteOne} and ${this.semitoneNoteTwo} is ${this.rightAnswer}`
+
+  }
+
+  hideExplanation(){
+   document.getElementById('answer').innerHTML =' ';
+   document.getElementById('explanation').innerHTML = ' ';
+  
+  }
+
+  counter() {
+    if (this.inputNumber == this.rightAnswer) {
+      this.streak++
+      return window.document.getElementById('score').innerHTML = `Streak: ${this.streak}`;
+    } else {
+      this.streak = 0
+      return window.document.getElementById('score').textContent = `Streak: ${this.streak}`;
+    }
+  }
+
+
+}
 
 let buddy = new JamBuddy()
-buddy.selectNotes()
-buddy.checkAnswer()
-buddy.revealAnswer();
 
 module.exports = buddy;

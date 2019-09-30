@@ -21,7 +21,7 @@
           let selectedNotes = require('./semitoneGUI');
           expect(global.document.getElementById('notes').innerHTML).toBe('selected notes');
           selectedNotes.selectNotes()
-          expect(global.document.getElementById('notes').innerHTML).toEqual(jasmine.any(Array))
+          expect(global.document.getElementById('notes').innerHTML).toEqual(selectedNotes.selectedSemitoneNotes.toString())
       })
       it('should have an ID that displays the selected notes', () => {
           let selectedNotes = require('./semitoneGUI');

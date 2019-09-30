@@ -9,40 +9,34 @@
 
 </head>
 
-<body>
+<body onload="buddy.selectNotes()">
     <div class="container">
         <div class="borders">
             <h1 class="display-1">Semitone Game</h1>
         </div>
-
         <h4>Your chosen letters are: </h4>
         <div class="borders">
             <h1 id="notes" class="display-4"></h1>
         </div>
-        <div class="wrapper">
-            <button class="btn btn-primary button" onclick="buddy.selectNotes()" id="btn"
-                style="position: inherit">Get Random Notes</button>
-        </div>
         <script src="semitoneGUI4.js" type="text/javascript"></script>
-
+        <div class="wrapper">
+            <button class="btn btn-primary button" onclick="buddy.selectNotes(); buddy.hideExplanation();" id="btn" style="position: inherit">Get
+                Random Notes</button>
+        </div>
         <h4>What is the distance between the two letters: </h4>
         <input type="text" id="value" placeholder="What's your guess?">
         <div class="wrapper">
-            <button class="button btn btn-primary" onclick="buddy.checkAnswer()">Check my answer</button>
+            <button class="button btn btn-primary" onclick="buddy.checkAnswer(); buddy.revealExplanation(); buddy.counter();">Check my answer</button>
         </div>
-    <br> `1
-         <p id="answer" ></p>
+        <br>
+        <p id="answer"></p>
         <div>
             <p id="explanation"></p>
-            <button onclick="buddy.revealAnswer()">Reveal Answer</button>
         </div>
         <h4> Player Score</h4>
-        <p id="score"></p>
-        <!-- <button id="restart" onclick="window.reload()"></button> -->
+        <h4 id="score" class="display-1"></h4>
     </div>
-
-
 </body>
 
 
-</html>*
+</html>
