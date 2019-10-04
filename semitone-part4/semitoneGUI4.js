@@ -68,7 +68,7 @@ class JamBuddy {
       if (array[n] == this.semitoneNoteOne) {
         array[n] = array[n]
           .toString()
-          .fontcolor('#27ae60') 2
+          .fontcolor('#27ae60')
           .fontsize(5)
       }
       if (array[n] == this.semitoneNoteTwo) {
